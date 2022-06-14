@@ -24,8 +24,30 @@ class Product(MyCheck):
         if calorific <= 0 or cost <= 0:
             raise ValueError('Значение атрибутов calorific и cost может быть только положительным')
         else:
-            self.calorific = calorific
-            self.cost = cost
+            self.__calorific = calorific
+            self.__cost = cost
+
+    @property
+    def calorific(self):
+        return self.__calorific
+
+    @calorific.setter
+    def calorific(self, value):
+        if value <= 0:
+            raise ValueError('Значение атрибута calorific может быть только положительным')
+        else:
+            self.__calorific = value
+    
+    @property
+    def cost(self):
+        return self.__cost
+
+    @cost.setter
+    def cost(self, value):
+        if value <= 0:
+            raise ValueError('Значение атрибута cost может быть только положительным')
+        else:
+            self.__cost = value
 
 class Ingredient:
     def __init__(self, product, weight):
