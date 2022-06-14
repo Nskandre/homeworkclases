@@ -1,9 +1,20 @@
 class MyCheck:
-    def __init__(self, title=''):
+    def __init__(self, title):
         if len(title) == 0:
             raise ValueError('Значение атрибута title должно быть заполнено')
         else:
-            self.title = title
+            self.__title = title
+
+    @property
+    def title(self):
+        return self.__title
+
+    @title.setter
+    def title(self, value):
+        if len(value) == 0:
+            raise ValueError('Значение атрибута title должно быть заполнено')
+        else:
+            self.__title = value
 
 
 class Product(MyCheck):
@@ -15,7 +26,6 @@ class Product(MyCheck):
         else:
             self.calorific = calorific
             self.cost = cost
-
 
 class Ingredient:
     def __init__(self, product, weight):
