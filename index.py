@@ -34,7 +34,18 @@ class Ingredient:
         if weight <= 0:
             raise ValueError('Значение атрибута weight может быть только положительным')
         else:
-            self.weight = weight
+            self.__weight = weight
+
+    @property
+    def weight(self):
+        return self.__weight
+
+    @weight.setter
+    def weight(self, value):
+        if value <= 0:
+            raise ValueError('Значение атрибута weight может быть только положительным')
+        else:
+            self.__weight = value
 
     
     def get_calorific(self):
