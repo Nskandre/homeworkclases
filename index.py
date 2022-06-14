@@ -71,11 +71,11 @@ class Ingredient:
 
     
     def get_calorific(self):
-        return self.weight / 100 * Product.calorific
+        return self.__weight / 100 * Product.calorific
 
     
     def get_cost(self):
-        return self.weight / 100 * Product.cost
+        return self.__weight / 100 * Product.cost
 
 
 class Pizza(MyCheck):
@@ -99,4 +99,3 @@ class Pizza(MyCheck):
         for i in self.ingredients:
             get_cost += i.product.cost * i.weight / 100
         return get_cost
-    
