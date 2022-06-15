@@ -90,12 +90,12 @@ class Pizza(MyCheck):
     def get_calorific(self):
         get_calorific = 0
         for i in self.ingredients:
-            get_calorific += i.product.calorific * i.weight / 100
+            get_calorific += i.weight / 100 * i.product.calorific
         return get_calorific
 
 
     def get_cost(self):
         get_cost = 0
         for i in self.ingredients:
-            get_cost += i.product.cost * i.weight / 100
+            get_cost += i.weight / 100 * i.product.cost
         return get_cost
