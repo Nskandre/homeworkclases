@@ -71,7 +71,7 @@ class Ingredient:
 
 
     def get_calorific(self):
-        return f'{self.weight / 100 * self.product.calorific}'
+        return self.weight / 100 * self.product.calorific
 
     
     def get_cost(self):
